@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag-and-Drop</title>
+    <link rel="icon" type="image/png" href="todo.png">
+    
+    <!-- Old Favicon - Grab Icon From Google (Might be unsupported in the future) -->
+    <!-- <link rel="icon" type="image/png" href="https://s2.googleusercontent.com/s2/favicons?domain=jacinto.design"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My Academic</h1>
+    <div class="drag-container">
+        <!-- create each category column -->
+        <ul class="drag-list">
+            <!-- first column -->
+            <li class="drag-columns backlog-column"  ondrop = "drop(event)" ondragover='alowDrop(event)' ondragenter ='dragEnter(0)'>
+                <span> 
+                    <h2>Back Log</h2>
+                </span>
+
+                <!-- create content for each category -->
+                <div id ='backlog-content' class = 'custom-scroll over'>
+                    <ul class="drag-item-list" id="backlog">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+
+                <!-- add button group -->
+                <div class="add-btn-group">
+                    <div class="add-btn" onclick = 'showInputBox(0)'>
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                     <!-- container to type and add new item -->
+                     <div class="add-container">
+                        <div class="add-item" contenteditable = 'true'></div>
+                    </div>
+                    <div class="add-btn solid" onclick = 'hideInputBox(0)'>
+                        <span>Save Item</span>
+                    </div>
+                   
+                </div>                                 
+            </li>
+            
+         <!--   second column -->
+            <li class="drag-columns progress-column"  ondrop = "drop(event)" ondragover='alowDrop(event)' ondragenter ='dragEnter(1)'>
+                <span> 
+                    <h2>In Progress</h2>
+                </span>
+
+                <!-- create content for each category -->
+                <div id ='inProgress-content' class = 'custom-scroll'>
+                    <ul class="drag-item-list" id="progress">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+
+                <!-- add button group -->
+                <div class="add-btn-group">
+                    <div class="add-btn" onclick = 'showInputBox(1)'>
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item" contenteditable = 'true'></div>
+                    </div>
+                    <div class="add-btn solid" onclick = 'hideInputBox(1)'>
+                        <span>Save Item</span>
+                    </div>
+                   
+                </div>
+            </li>
+
+            <!-- third column -->
+            <li class="drag-columns backlog-column" ondrop = 'drop(event)' ondragover='alowDrop(event)' ondragenter ='dragEnter(2)' >
+                <span'> 
+                    <h2>Complete</h2>
+                </span>
+
+                <!-- create content for each category -->
+                <div id ='complete-content' class = 'custom-scroll'>
+                    <ul class="drag-item-list" id="complete" >
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+
+                <!-- add button group -->
+                <div class="add-btn-group">
+                    <div class="add-btn" onclick = 'showInputBox(2)'>
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-container" >
+                        <div class="add-item" contenteditable = 'true'></div>
+                    </div>
+                    <div class="add-btn solid" onclick = 'hideInputBox(2)'>
+                        <span>Save Item</span>
+                    </div>
+                  
+                </div>
+            </li>
+            
+         <!--   fourth column -->
+            <li class="drag-columns progress-column" ondrop = 'drop(event)' ondragover='alowDrop(event)' ondragenter ='dragEnter(3)'>
+                <span> 
+                    <h2>On Hold</h2>
+                </span>
+
+                <!-- create content for each category -->
+                <div id ='onHold-content' class = 'custom-scroll'>
+                    <ul class="drag-item-list" id="onHold"  >
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+
+                <!-- add button group -->
+                <div class="add-btn-group">
+                    <div class="add-btn" onclick = showInputBox(3)> 
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item" contenteditable = 'true'></div>
+                    </div>
+                    <div class="add-btn solid" onclick = 'hideInputBox(3)'>
+                        <span>Save Item</span>
+                    </div>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
