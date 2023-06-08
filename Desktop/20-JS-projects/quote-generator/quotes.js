@@ -12,35 +12,81 @@ const loader = document.getElementById('loader');
 let apiQuote = [];           //use let to initialize the array
                             //set const if we dont want to change the variable
 let quote;
-const rand = [];
-//to show a quote 
+const generatedQuotes = [];
+let temp = [];
 
+//to show a quote 
 
 function a_new_quote() {
     loading();
-    const x = Math.floor(Math.random() * apiQuote.length)
-    quote = apiQuote[x];  //call a random element in the array
-    author.textContent = quote.author;
-    rand.push(x)
-   // if (x.text.length > 100)
-     //   quoteText.classList.add('long-quote');
-    //else {
-       // quoteText.classList.remove('long-quote');
-    //}
 
-    //set quote, hide loader
-    quoteText.textContent = quote.text;
     
-    complete();
+    if (temp.length != 0){
+        // if (generatedQuotes.length != 0) {
+        //     let pop = temp.pop();
+        //     generatedQuotes.push(pop);
+        //     pop = temp.pop();
+        //     generatedQuotes.push(pop);
+        //     quote = apiQuote[pop];
+        //     author.textContent = quote.author;
+        //     quoteText.textContent = quote.text;
+        //     complete(); 
+        // }
+        // else {
+        let pop = temp.pop();  
+        generatedQuotes.push(pop); 
+        quote = apiQuote[pop];
+        author.textContent = quote.author;
+        quoteText.textContent = quote.text;
+        complete(); 
+        
+        // } 
+    }
+
+    else {
+        const x = Math.floor(Math.random() * apiQuote.length)
+        quote = apiQuote[x];  //call a random element in the array
+        author.textContent = quote.author;
+       
+    // if (x.text.length > 100)
+        //   quoteText.classList.add('long-quote');
+        //else {
+        // quoteText.classList.remove('long-quote');
+        //}        
+        generatedQuotes.push(x);
+        quoteText.textContent = quote.text;
+        //set quote, hide loader
+        complete();
+
+    }
+   
 }
 
 function get_prev_quote() {
     loading();
-    quote = apiQuote[rand.slice(-2,-1)];
-    author.textContent = quote.author;
-    quoteText.textContent = quote.text;
-    complete();
+
+    if (generatedQuotes.length > 1){
+            let pop = generatedQuotes.pop();
+            temp.push(pop);
+            pop = generatedQuotes.pop() ;
+            temp.push(pop);
+            quote = apiQuote[pop];
+            author.textContent = quote.author;
+            quoteText.textContent = quote.text;
+            complete(); 
+        }
+    
+    else if (generatedQuotes.length === 1) {
+            let pop = generatedQuotes.pop();
+            temp.push(pop);
+            quote = apiQuote[pop];
+            author.textContent = quote.author;
+            quoteText.textContent = quote.text;
+            complete(); 
+    }
 }
+
+
 
 async function getQuotes() {
     loading();
@@ -62,7 +108,8 @@ function loading() {
 //hide loading
 function complete(){
     loader.hidden = true;
-    quoteContainer.hidden = false; 
+    quoteContainer.hidden = false;
+     
 }
 
 //post to Facebook
@@ -77,12 +124,15 @@ function tweeting() {
 }
 
 newQuote.addEventListener('click', a_new_quote);
-preQuote.addEventListener('click', get_prev_quote )
+preQuote.addEventListener('click', get_prev_quote)
 facebook.addEventListener('click',postOnF );
 twitter.addEventListener('click',tweeting );
 
 
-getQuotes();
+
+
+getQuotes();        //to get quote when open browser
+
 
 
 

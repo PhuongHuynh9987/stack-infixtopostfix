@@ -63,11 +63,16 @@ i {
 
 .button-group2 {
   /* margin-top: 1rem; */
-  display: flex;
-  position: fixed;
-  bottom: 5px;
-  right: 10rem;
-  bottom: 2rem;
+  position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.fas{
+  font-size: 4rem;
+  margin-right: 4rem;
+  color: rgb(202, 194, 202);
 }
 
 button {
@@ -81,32 +86,32 @@ button {
   outline: none;
   padding: 0.1rem 1rem;
   box-shadow: 0rem 0.4rem rgba(87, 85, 68, 0.45);
+  
 }
 
+.fas:hover, 
 button:hover{
   filter: brightness(80%);
 }
 
-.new-quote-button1 {
+/* .new-quote-button1 {
   font-family: 'Indie Flower', cursive;
-  border-radius: 0%;
   border-right: 5rem solid rgb(202, 194, 202);
   border-top: 3.5rem solid transparent;
   border-bottom: 3.5rem solid transparent;
   background-color: rgba(121,121,121,0.0);
   box-shadow: 0rem 0rem;
 }
-
 .new-quote-button2 {
   font-family: 'Indie Flower', cursive;
-  border-radius: 0%;
   border-left: 5rem solid rgb(202, 194, 202);
-  border-top: 3.5rem solid transparent;
-  border-bottom: 3.5rem solid transparent;
+  border-top: 3.5rem solid ;
+  border-bottom: 3.5rem solid;
   margin-left: 3rem;
   background-color: rgba(121,121,121,0.0);
   box-shadow: 0rem 0rem;
-}
+} */
+
 
 h4{
   margin-top:3rem;
@@ -114,12 +119,12 @@ h4{
 }
 
 
-button:active{
+button:active {
   transform: translate(0, 0.3rem);                    /*is to move the box down 0.3rem when active(click)*/
   box-shadow: 0 0rem rgba(111, 111, 111, 0.45);
 }
 
-.loader{
+.loader {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #333;
   border-radius: 50%;
@@ -139,7 +144,7 @@ button:active{
 }
 
 /* Media Query: Large Smartphone (Vertical) */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .button-group2 {
     display: flex;
     position: fixed;
