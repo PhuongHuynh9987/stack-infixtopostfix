@@ -1,0 +1,200 @@
+
+/* html {
+  /* box-sizing: border-box; */
+
+body {  
+  margin: 0;
+  min-height: 100vh;  
+  background: url('/bg.png');
+  background-repeat: repeat;
+  background-attachment:fixed;
+  background-position: 50% 60%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.drag-columns {
+  /* flex: 1; */
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 20px;
+  overflow-y: hidden;
+  width: 70rem;
+  margin: 10px;
+}
+/* .over {
+  background-color: white;
+} */
+
+.drag-container {
+  color: white;
+  font-weight: 100;
+  opacity:0.9;
+  margin: 20px;
+}
+
+h1 {
+  position: relative;
+  color: black;  
+  font-size: 5rem;
+  text-align: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(175, 101, 87);
+  padding: 0.4rem 2.3rem;
+  margin: 1rem;
+  border-radius: 10px;
+  /* text-shadow: 2px 2px 2px 5px rgb(127, 32, 32); */
+}
+
+li {
+  list-style-type: none;
+}
+
+.drag-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.drag-item {
+  background-color: rgb(29, 17, 14);
+  padding: 0.4rem 0.3rem;
+  margin: 1rem 2rem 0rem 0rem;
+  border-radius: 10px;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drag-item-list {
+  min-height: 50px;
+}
+
+
+/* .drag-item:focus {
+  outline: none;
+  background-color: white;
+  color: black;
+} */
+
+.add-btn-group {
+  margin: 2rem 2rem ;
+  color:rgb(29, 17, 14);
+  cursor: pointer;
+}
+
+.add-container {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100px;
+  display: none;
+}
+
+.add-btn {
+  border-radius: 10px;
+  padding: 0.4rem 2.3rem;
+  width: fit-content;
+  margin:auto;
+  display:flex;
+}
+
+.solid {
+  display: none;
+}
+
+.add-item {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px auto;
+  resize: none;
+  color: black;
+  padding: 10px;
+}
+.add-btn:hover {
+  background-color: white;
+  transition: all 0.5s ease-in;
+}
+
+/* .add-btn:active {
+  transform: scale(0.97);
+} */
+
+.plus-sign {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.custom-scroll {
+  overflow-y: auto;
+  max-height: 42vh;
+}
+
+.custom-scroll::-webkit-scrollbar-track{
+  border-radius: 10px;
+  background-color: rgba(244,244,255,0.3);
+  margin-right: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar{
+  width:10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: #090808;
+}
+
+
+/* Media Query: Laptop */
+@media screen and (max-width: 1250px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .drag-item {
+    width: auto;
+  }
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 800px) {
+  body {
+    overflow-y: auto;
+    font-size: 0.8rem;
+  }
+
+  .drag-container {
+    margin: 10px;
+  }
+
+  .drag-columns{
+    width: 16rem;
+  }
+
+  .drag-list {
+    display: flexbox;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
+  }
+
+  .drag-item {
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 3rem;
+  }
+
+  .drag-columns {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,19 @@
+import java.sql.*;
+
+public class JDBC {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("hello: ");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "9987");
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("error: " + e);
+        }
+//        Statement st = con.createStatement();
+//        ResultSet rs = st.executeQuery("SELECT & FROM my_list");
+	}
+
+}
